@@ -1,0 +1,21 @@
+.button {
+  background-color: #604A70;
+  color: #FFFFFF;
+}
+
+.button a {
+  color: #FFFFFF;
+}
+
+.button:hover {
+  background-color: #796289;
+}
+
+.button-inverted {
+  border: 3px solid #604A70;
+  background-color: #F0F0F0;
+}
+
+.button-inverted:hover {
+  border: 3px solid #796289;
+}

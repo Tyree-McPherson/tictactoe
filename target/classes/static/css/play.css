@@ -1,0 +1,319 @@
+.play-container {
+  background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23604a70' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  width: 100%;
+  height: calc(100vh - 50px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.play-game-play-area {
+  width: 100%;
+  height: 100%;
+  max-height: 730px;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  position: relative;
+}
+
+.play-game-square {
+  width: 238px;
+  height: 238px;
+  background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 156px;
+}
+
+#play-game-square-1, #play-game-square-2, #play-game-square-3,
+#play-game-square-4, #play-game-square-5, #play-game-square-6,
+#play-game-square-7, #play-game-square-8, #play-game-square-9 {
+  cursor: pointer;
+}
+
+.play-game-container {
+  width: 730px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.play-game-turn-and-stats {
+  text-align: center;
+}
+
+.play-game-turn-and-stats h2 {
+  color: #604A70;
+}
+
+.play-game-stats {
+  display: flex;
+  justify-content: center;
+}
+
+.play-game-stats p:not(:first-child) {
+  padding-left: 8px;
+}
+
+.play-game-circle {
+  position: fixed;
+  transform: translate(0%, 0%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid #707070;
+  display: none;
+  z-index: 10;
+}
+
+.play-game-over-container {
+  display: none;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100vh;
+  margin-top: -50px;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.6s forwards;
+}
+
+.play-game-over-container h1 {
+  color: #604A70;
+  font-size: 96px;
+}
+
+.play-game-over-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 30%;
+  width: 70%;
+  max-width: 550px;
+}
+
+.play-game-over-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.play-game-over-line {
+  background-color: #000000;
+  position: absolute;
+  border-radius: 2.5px;
+}
+
+#play-game-over-line-1 {
+  width: 492px;
+  height: 5px;
+  display: none;
+  top: 115px;
+  left: 17%;
+  animation: line-through-1-3 1s forwards;
+}
+
+#play-game-over-line-2 {
+  width: 492px;
+  height: 5px;
+  display: none;
+  top: 360px;
+  left: 17%;
+  animation: line-through-1-3 1s forwards;
+}
+
+#play-game-over-line-3 {
+  width: 492px;
+  height: 5px;
+  display: none;
+  top: 605px;
+  left: 17%;
+  animation: line-through-1-3 1s forwards;
+}
+
+#play-game-over-line-4 {
+  width: 5px;
+  height: 492px;
+  display: none;
+  top: 16%;
+  left: 16%;
+  animation: line-through-4-6 1s forwards;
+}
+
+#play-game-over-line-5 {
+  width: 5px;
+  height: 492px;
+  display: none;
+  top: 16%;
+  left: 365px;
+  animation: line-through-4-6 1s forwards;
+}
+
+#play-game-over-line-6 {
+  width: 5px;
+  height: 492px;
+  display: none;
+  top: 16%;
+  left: 610px;
+  animation: line-through-4-6 1s forwards;
+}
+
+#play-game-over-line-7 {
+  width: 5px;
+  height: 710px;
+  display: none;
+  top: 2%;
+  left: 50%;
+  transform: rotate(-45deg);
+  animation: line-through-7 1s forwards;
+}
+
+#play-game-over-line-8 {
+  width: 5px;
+  height: 710px;
+  display: none;
+  top: 2%;
+  left: 49%;
+  transform: rotate(45deg);
+  animation: line-through-8 1s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes line-through-1-3 {
+  from {
+    transform: scaleX(0.1);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes line-through-4-6 {
+  from {
+    transform: scaleY(0.1);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes line-through-7 {
+  from {
+    transform: rotate(-45deg) scaleY(0.1);
+  }
+  to {
+    transform: rotate(-45deg) scaleY(1);
+  }
+}
+
+@keyframes line-through-8 {
+  from {
+    transform: rotate(45deg) scaleY(0.1);
+  }
+  to {
+    transform: rotate(45deg) scaleY(1);
+  }
+}
+
+/* At 800px (width) or 880px (height), shrink the main play area down to 450px. */
+@media (max-width: 50em) or (max-height: 55em) {
+  .play-container {
+    overflow: auto;
+  }
+
+  .play-game-play-area {
+    max-height: 450px;
+    gap: 3px;
+  }
+
+  .play-game-square {
+    width: 148px;
+    height: 148px;
+    font-size: 88px;
+  }
+
+  .play-game-container {
+    width: 450px;
+  }
+
+  #play-game-over-line-1 {
+    width: 306px;
+    top: 72px;
+    left: 17%;
+  }
+  
+  #play-game-over-line-2 {
+    width: 306px;
+    top: 224px;
+    left: 17%;
+  }
+  
+  #play-game-over-line-3 {
+    width: 306px;
+    top: 375px;
+    left: 17%;
+  }
+  
+  #play-game-over-line-4 {
+    height: 306px;
+    top: 16%;
+    left: 16%;
+  }
+  
+  #play-game-over-line-5 {
+    height: 306px;
+    top: 16%;
+    left: 224px;
+  }
+  
+  #play-game-over-line-6 {
+    height: 306px;
+    top: 16%;
+    left: 375px;
+  }
+  
+  #play-game-over-line-7 {
+    height: 440px;
+    top: 2%;
+    left: 50%;
+  }
+  
+  #play-game-over-line-8 {
+    height: 440px;
+    top: 2%;
+    left: 49%;
+  }
+
+  .play-game-over-container {
+    display: none;
+    margin-top: -50px;
+  }
+  
+  .play-game-over-container h1 {
+    font-size: 48px;
+  }
+  
+  .play-game-over-content {
+    height: 30%;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .play-game-over-buttons-container {
+    width: 100%;
+  }
+}

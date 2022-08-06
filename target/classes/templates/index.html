@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <script src="/javascript/audio.js"></script>
+  <script src="/javascript/animate-landing-page.js"></script>
+  <title>Main Menu - Tic Tac Toe</title>
+</head>
+<body>
+  <header th:include="header :: header"></header>
+  <div id="index-container" class="index-container">
+    <div id="index-cross-line-top" class="index-cross-line"></div>
+    <div class="index-center">
+      <div class="index-title-container">
+        <h1>Tic Tac Toe</h1>
+      </div>
+      <div class="index-buttons-container">
+        <a href="/play">
+          <button class="button">
+            Play
+          </button>
+        </a>
+        <a href="/instructions">
+          <button class="button-inverted">
+            Instructions
+          </button>
+        </a>
+      </div>
+    </div>
+    <div id="index-cross-line-bottom" class="index-cross-line"></div>
+  </div>
+  <footer th:include="footer :: footer"></footer>
+</body>
+</html>
